@@ -11,7 +11,7 @@ A distributed task queue where you can disconnect while the cluster runs the tas
     2. Queue a single query-message (RabbitMQ)
     3. A cretask query-consumer will get this query-message (RabbitMQ)
         1. Query the entire cluster for the task status
-        2. After a while, if there are no responses, start the task
+        2. After a while, if there are no responses, queue the task
         4. Only now, ack the query-message (because this consumer might fail before starting the task)
     4. Wait for task-specific status messages
         1. Update the status in CouchDB
